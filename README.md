@@ -23,7 +23,7 @@ bash run_mmce.sh
 Tensorflow (>1.4), Keras (for preprocessing text files), Numpy, Python
 
 ## Results
-We expect the ECE numbers to lie in the range of 6-7%, Brier score in the range of 0.34-0.38 and test NLL around 0.94-0.98 for the finetuned value of ```mmce_coeff=8.0 or 9.0```.  
+We expect the ECE numbers to lie in the range of 6-7%, Brier score in the range of 0.34-0.38 and test NLL around 0.94-0.98 for the finetuned value of ```mmce_coeff=8.0 or 9.0```.  Baseline ECE for this code is expected to be around 16-18%, Brier score close to 0.40-0.42 and test NLL close to 1.35-1.5. 
 
 ## Disclaimer
 This code is for educational purposes only. 
