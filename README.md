@@ -1,5 +1,5 @@
 # MMCE
-This is an example of the Maximum Mean Calibration Error on 20 NewsGroups dataset with a global pooling CNN model, as described in the paper **Trainable Calibration Measures for Neural Networks from Kernel Mean Embeddings, ICML 2018**. The code is yet in its preliminary version and will be updated with other datasets, unit tests, comments and extensive documentation in near future. 
+This is an example of the Maximum Mean Calibration Error on 20 Newsgroups dataset with a global pooling CNN model, as described in the paper **Trainable Calibration Measures for Neural Networks from Kernel Mean Embeddings, ICML 2018**. The code is yet in its preliminary version and will be updated with other datasets, unit tests, comments and extensive documentation in near future. 
 
 An example application of MMCE on 20 Newsgroups document classification is provided as of now. To run MMCE, follow the procedure given below:
 
@@ -19,11 +19,17 @@ Given is a script **```run_mmce.sh```**, which contains code for running MMCE tr
 ```bash
 bash run_mmce.sh
 ```
+In order to look at the number of points predicted with confidence more than 99% for MMCE and Baseline, please use the following command:
+```bash
+python get_insights.py --file_name=<MMCE file name> --baseline_file_name=<Baseline File Name> --T=<Temperature for Baseline>
+```
+Usually the temperature for 20 Newsgroups baseline lies in the range of 0.3-0.4 (as found out by minimizing NLL with respect to only T).
+
 ## Dependencies
 Tensorflow (>1.4), Keras (for preprocessing text files), Numpy, Python
 
 ## Results
-We expect the ECE numbers to lie in the range of 6-7%, Brier score in the range of 0.34-0.38 and test NLL around 0.94-0.98 for the finetuned value of ```mmce_coeff=8.0 or 9.0```.  Baseline ECE for this code is expected to be around 16-18%, Brier score close to 0.40-0.42 and test NLL close to 1.35-1.5. 
+We expect the ECE numbers to lie in the range of 6-7%, Brier score in the range of 0.34-0.38 and test NLL around 0.94-0.98 for the finetuned value of ```mmce_coeff=8.0 or 9.0```.  Baseline ECE for this code is expected to be around 16-18%, Brier score close to 0.40-0.42 and test NLL close to 1.35-1.5. For MMCE, we expect it to reduce the number of points with confidence >0.99 as compared to the baseline but would significantly beat Baseline+T. In a sample run, we obtained 42% of points with >0.99 confidence with MMCE, 16% with Baseline+T and 62% with the Baseline. 
 
 ## Disclaimer
 This code is for educational purposes only. 
