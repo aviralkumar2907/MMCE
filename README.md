@@ -23,7 +23,7 @@ In order to look at the number of points predicted with confidence more than 99%
 ```bash
 python get_insights.py --file_name=<MMCE file name> --baseline_file_name=<Baseline File Name> --T=<Temperature for Baseline>
 ```
-Usually the temperature for 20 Newsgroups baseline lies in the range of 0.3-0.4 (as found out by minimizing NLL with respect to only T).
+Usually the temperature for 20 Newsgroups baseline lies in the range of 0.3-0.4 (as found out by minimizing NLL with respect to only T). For MMCE, the temperature lies around 0.85.
 
 ## Dependencies
 Tensorflow (>1.4), Keras (for preprocessing text files), Numpy, Python
@@ -32,4 +32,4 @@ Tensorflow (>1.4), Keras (for preprocessing text files), Numpy, Python
 We expect the ECE numbers to lie in the range of 6-7%, Brier score in the range of 0.34-0.38 and test NLL around 0.94-0.98 for the finetuned value of ```mmce_coeff=8.0 or 9.0```.  Baseline ECE for this code is expected to be around 16-18%, Brier score close to 0.40-0.42 and test NLL close to 1.35-1.5. For MMCE, we expect it to reduce the number of points with confidence >0.99 as compared to the baseline but would significantly beat Baseline+T. In a sample run, we obtained 42% of points with >0.99 confidence with MMCE, 16% with Baseline+T and 62% with the Baseline. 
 
 ## Disclaimer
-This code is for educational purposes only. In case of any queries or suggestions please contact Aviral Kumar at aviralkumar2907@gmail.com. 
+In case of any queries or suggestions please contact Aviral Kumar at aviralkumar2907@gmail.com. 
