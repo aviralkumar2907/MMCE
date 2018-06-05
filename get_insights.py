@@ -88,7 +88,7 @@ with open(baseline_file_name, 'r') as g:
         baseline_list.extend((np.argmax(probs2, 1)).tolist())
         baseline_prob_values.extend(np.max(probs2, 1).tolist())
         baseline_temp_prob_values.extend(
-        				np.max(softmax(np.log(probs2 + 1e-10)*T), 1).tolist())
+        	np.max(softmax(np.log(probs2 + 1e-10)*T), 1).tolist())
         correct_list_baseline.extend(tgt2.tolist())
 
       line = f.readline()
@@ -104,13 +104,13 @@ print ('MMCE: ', 1.0*count_high_mmce/len(baseline_prob_values))
 
 def get_acc(prob_list, tgt_list, pred_list):
     avg_accuracy = ((np.array(prob_list) >= 0.99)*\
-    												(np.array(tgt_list) == np.array(pred_list)))
+    		(np.array(tgt_list) == np.array(pred_list)))
     return np.sum(avg_accuracy)
 
 baseline_high_acc = 1.0*get_acc(baseline_prob_values,
-														 correct_list_baseline, baseline_list)/count_high_baseline
+	correct_list_baseline, baseline_list)/count_high_baseline
 baseline_temp_high_acc = 1.0*get_acc(baseline_temp_prob_values,
-												 correct_list_baseline, baseline_list)/count_high_baseline_temp
+	correct_list_baseline, baseline_list)/count_high_baseline_temp
 mmce_high_acc = 1.0*get_acc(mmce_prob_values, 
 																			correct_list, mmce_list)/count_high_mmce
 
