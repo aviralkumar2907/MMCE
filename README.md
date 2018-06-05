@@ -32,4 +32,4 @@ Tensorflow (>1.4), Keras (for preprocessing text files), Numpy, Python
 We expect the ECE numbers to lie in the range of 6-7%, Brier score in the range of 0.34-0.38 and test NLL around 0.94-0.98 for the finetuned value of ```mmce_coeff=8.0 or 9.0```.  Baseline ECE for this code is expected to be around 16-18%, Brier score close to 0.40-0.42 and test NLL close to 1.35-1.5. For MMCE, we expect it to reduce the number of points with confidence >0.99 as compared to the baseline but would significantly beat Baseline+T. In a sample run, we obtained 42% of points with >0.99 confidence with MMCE, 16% with Baseline+T and 62% with the Baseline. 
 
 ## Disclaimer
-This code is for educational purposes only. 
+This code is for educational purposes only. In case of any queries or suggestions please contact Aviral Kumar at aviralkumar2907@gmail.com. 
