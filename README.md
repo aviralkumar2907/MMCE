@@ -5,7 +5,7 @@ An example application of MMCE on 20 Newsgroups document classification is provi
 
 In order to use MMCE for training, run:
 ```bash
-python cnn_keras_preprocess_2.py --mmce_coeff=8.0 --batch_size=batch_size > outfile.txt
+python 20ng_mmce.py --mmce_coeff=8.0 --batch_size=batch_size > outfile.txt
 ```
 In order to compute the ECE numbers, Brier score and test-NLL or to visualize the reliability plots, we then run the ```get_calibration.py``` script.
 ```bash
